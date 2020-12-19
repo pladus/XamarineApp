@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurrencyParser.CurrencyDetailsPage"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+                Title="{Binding Title}">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Styles.css" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10">
+
+                <Label Text="{Binding Item.CurrencyName}"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Medium"  
+                FontAttributes="Bold"/>
+                <Label Text="КОНВЕРТАЦИЯ ИЗ РУБЛЕЙ"
+                       x:Name="ConvertDirectionLabel"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Entry x:Name="ConvertorInput"
+                       TextChanged="ConvertorInput_TextChanged"
+                       WidthRequest="200"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center"
+                       MaxLength="20"
+                       Text="0,00"  
+                       Keyboard="Numeric"/>
+                <Label Text="Результат:"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label x:Name="ConvertorResult"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Button Text="ИЗМЕНИТЬ НАПРАВЛЕНИЕ КОНВЕРТАЦИИ"    
+                        Pressed="Button_Pressed"
+                FontSize="Micro"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label></Label>
+
+                <Label Text="ДИНАМИКА РУБЛЕВОЙ СТОИМОСТИ ВАЛЮТЫ"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Начало отчетного интервала:"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" />
+                <DatePicker x:Name="StartDatePicker" Visual="Default"/>
+                <Label Text="Конец отчетного интервала:"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" />
+                <DatePicker x:Name="EndDatePicker" Visual="Default"/>
+                <Label x:Name="loadIndicator" Text="ДАННЫЕ ЗАГРУЖАЮТСЯ..."  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Small"  FontAttributes="Bold"
+                       IsVisible="{Binding IsBusy}" />
+                <microcharts:ChartView x:Name="chartView"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start"
+                                   HeightRequest="250"
+                                   WidthRequest="500"
+                                   />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

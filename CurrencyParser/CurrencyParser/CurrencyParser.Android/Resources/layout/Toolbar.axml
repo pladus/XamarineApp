@@ -1,0 +1,12 @@
+
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fffafa"
+    android:theme="@style/AppToolbarTheme"
+    android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    tools:gridSpec="1|8|#ff0000ff|K:#ffff80ff:16,l:72,l:16,r|S:#ff80ffff:16,0,l:16,56,l:16,0,r" />
+

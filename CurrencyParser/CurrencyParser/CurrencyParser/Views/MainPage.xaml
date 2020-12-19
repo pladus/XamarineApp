@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CurrencyParser"
+             x:Class="CurrencyParser.MainPage"            
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Styles.css" />
+    </ContentPage.Resources>
+    <StackLayout>
+        <SearchBar x:Name="MainPageSearchBar"></SearchBar>
+        <ListView x:Name="UIRows"  SeparatorColor="#483737" 
+                  RefreshControlColor="#483737"
+                  ItemsSource="{Binding Rows}"
+                  ItemTapped="UIRows_ItemTapped" RowHeight="80">
+            <ListView.Header HeightRequest="20">
+                <StackLayout  BackgroundColor="#574747" HeightRequest="20">
+                    <Grid HeightRequest="20">
+                        <Label Grid.Column="0" Text="КОД" FontAttributes="Bold" TextColor="white"/>
+                        <Label Grid.Column="1" Text="ВАЛЮТА" FontAttributes="Bold" TextColor="white"/>
+                        <Label Grid.Column="2" Text="НОМИНАЛ" FontAttributes="Bold" TextColor="white"/>
+                        <Label Grid.Column="3" Text="РУБЛЕЙ" FontAttributes="Bold"  TextColor="white"/>
+                    </Grid>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>                            
+                            <Label Grid.Column="0" Text="{Binding CurrencyCode}" />
+                            <Label Grid.Column="1" Text="{Binding CurrencyName}" FontAttributes="Bold" />
+                            <Label Grid.Column="2" Text="{Binding Nominal}" />
+                            <Label Grid.Column="3" Text="{Binding ToRouble}" FontAttributes="Bold"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label x:Name="loadIndicator" Text="ДАННЫЕ ЗАГРУЖАЮТСЯ..."  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Small"  FontAttributes="Bold"
+                       IsVisible="{Binding IsBusy}" />
+    </StackLayout>
+
+</ContentPage>

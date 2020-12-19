@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurrencyParser.Views.AboutCompanyPage"
+             Title="О компании">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Styles.css" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="15">
+                <Label Text=""/>
+                <Image Source="bizzbrologo.png" WidthRequest="180"></Image>                
+                <Label Text="bizzbro.ru"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" />
+                <Label Text="+7 (985) 046-43-15"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" />
+                <Label Text="Предложения: info@bizzbro.ru"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" />
+                <Label Text="Поддержка: support@bizzbro.ru"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" />
+                <Label Text=""/>
+                <Label Text="BIZZBRO - Российский разработчик энтерпрайз-решений"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Micro"/>
+                <Label Text="в сфере финансов, миддлвэр, платежей, логистики,"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Micro"/>
+                <Label Text="аналитики и корпоративной автоматизации."
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Micro"/>
+                <Label Text=""/>
+                <Label Text="Компания специализируется на разработке отказоустойчивых"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Micro" />
+                <Label Text="кластерных веб-сервисов, оболочек вендинговых устройств и"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Micro" />
+                <Label Text="киосков, мобильных приложений и веб-сайтов."
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Micro" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
